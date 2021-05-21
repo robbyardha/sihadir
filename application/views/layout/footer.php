@@ -129,6 +129,9 @@
 <script src="assets/js/plugins/apexcharts.min.js"></script>
 <!-- custom-chart js -->
 <script src="assets/js/pages/dashboard-main.js"></script>
+<!-- datatable Js -->
+<script src="<?= base_url('assets/') ?>js/plugins/jquery.dataTables.min.js"></script>
+<script src="<?= base_url('assets/') ?>js/plugins/dataTables.bootstrap4.min.js"></script>
 <script>
     $(document).ready(function() {
         checkCookie();
@@ -174,7 +177,10 @@
     }
 </script>
 
-
+<!-- Datatables -->
+<script>
+    $('#user-list-table').DataTable();
+</script>
 </body>
 
 </html>
