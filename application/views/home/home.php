@@ -7,7 +7,10 @@
                     <div class="card-body">
                         <ul class="nav nav-pills bg-white" id="myTab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active text-uppercase" id="user1-tab" data-toggle="tab" href="#user1" role="tab" aria-controls="user1" aria-selected="true">XII IPA 1</a>
+                                <a class="nav-link active text-uppercase" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">ALL</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-uppercase" id="user1-tab" data-toggle="tab" href="#user1" role="tab" aria-controls="user1" aria-selected="true">XII IPA 1</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-uppercase" id="user2-tab" data-toggle="tab" href="#user2" role="tab" aria-controls="user2" aria-selected="false">XII IPA 2</a>
@@ -35,6 +38,55 @@
                 </div>
                 <div class="tab-content" id="myTabContent">
                     <!-- [ user card1 ] start -->
+                    <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+                        <div class="card user-profile-list">
+                            <div class="card-body">
+                                <div class="dt-responsive table-responsive">
+                                    <table id="all-tables" class="table nowrap">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Nama</th>
+                                                <th>Kelas</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>
+                                                    <div class="d-inline-block align-middle">
+                                                        <img src="assets/images/user/avatar-1.jpg" alt="user image" class="img-radius align-top m-r-15" style="width:40px;">
+                                                        <div class="d-inline-block">
+                                                            <h6 class="m-b-0">Quinn Flynn</h6>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>XII IPA 1</td>
+                                                <td>
+                                                    <span class="badge badge-light-success">Hadir</span>
+                                                    <div class="overlay-edit">
+                                                        <button type="button" class="btn btn-icon btn-success"><i class="feather icon-check-circle"></i></button>
+                                                        <button type="button" class="btn btn-icon btn-danger"><i class="feather icon-trash-2"></i></button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Nama</th>
+                                                <th>Kelas</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="tab-pane fade show active" id="user1" role="tabpanel" aria-labelledby="user1-tab">
                         <div class="card user-profile-list">
                             <div class="card-body">

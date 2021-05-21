@@ -63,6 +63,7 @@
 </script> -->
 <script>
     $(document).ready(function() {
+        $('#all-tables').DataTable();
         $('#ipa1').DataTable();
         $('#ipa2').DataTable();
         $('#ipa3').DataTable();
