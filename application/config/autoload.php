@@ -80,6 +80,7 @@ $autoload['libraries'] = array('email', 'session');
 |
 */
 $autoload['drivers'] = array();
+$autoload['libraries'] = array('database');
 
 /*
 | -------------------------------------------------------------------

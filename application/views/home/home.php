@@ -36,6 +36,9 @@
                         </ul>
                     </div>
                 </div>
+                <?php
+                $no =1; 
+                ?>
                 <div class="tab-content" id="myTabContent">
                     <!-- [ user card1 ] start -->
                     <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
@@ -46,32 +49,31 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
+                                                <th>NIPD</th>
                                                 <th>Nama</th>
                                                 <th>Kelas</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php foreach ($siswa as $s) ?>
                                             <tr>
-                                                <td>1</td>
-                                                <td>
-                                                    <div class="d-inline-block align-middle">
-                                                        <img src="assets/images/user/avatar-1.jpg" alt="user image" class="img-radius align-top m-r-15" style="width:40px;">
-                                                        <div class="d-inline-block">
-                                                            <h6 class="m-b-0">Quinn Flynn</h6>
-                                                        </div>
+                                                <td><?= $no++?></td>
+                                                <td><div class="d-inline-block align-middle">
+                                                    <div class="d-inline-block">
+                                                        <?= $s['nis']?>
                                                     </div>
-                                                </td>
-                                                <td>XII IPA 1</td>
-                                                <td>
-                                                    <span class="badge badge-light-success">Hadir</span>
+                                                </div></td>
+                                                
+                                                <td><img src="assets/images/user/avatar-1.jpg" alt="user image" class="img-radius align-top m-r-15" style="width:40px;"><?= $s['nama_siswa']?></td>
+                                                <td><?= $s['kelas_id']?></td>
+                                                <td><span class="badge badge-light-success"><?= $s['status_id']?></span>
                                                     <div class="overlay-edit">
                                                         <button type="button" class="btn btn-icon btn-success"><i class="feather icon-check-circle"></i></button>
                                                         <button type="button" class="btn btn-icon btn-danger"><i class="feather icon-trash-2"></i></button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
+                                                    </div></td>
+                                        </tr>
+                                            
                                         </tbody>
                                         <tfoot>
                                             <tr>
@@ -104,12 +106,7 @@
                                             <tr>
                                                 <td>1</td>
                                                 <td>
-                                                    <div class="d-inline-block align-middle">
-                                                        <img src="assets/images/user/avatar-1.jpg" alt="user image" class="img-radius align-top m-r-15" style="width:40px;">
-                                                        <div class="d-inline-block">
-                                                            <h6 class="m-b-0">Quinn Flynn</h6>
-                                                        </div>
-                                                    </div>
+                                                    
                                                 </td>
                                                 <td>XII IPA 1</td>
                                                 <td>
