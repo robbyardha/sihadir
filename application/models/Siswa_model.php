@@ -7,7 +7,7 @@ class Siswa_model extends CI_Model
         return $this->db->get('siswa')->result_array();
     }
 
-    public function getsiswabyid()
+    public function getsiswabyid($nis = null)
     {
         if ($nis == null){
             return $this->db->get('siswa')->result_array();
@@ -28,4 +28,3 @@ class Siswa_model extends CI_Model
 
     }
 }
-?>

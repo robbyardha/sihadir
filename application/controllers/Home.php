@@ -5,20 +5,18 @@ class Home extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Siswa_model');
-        
     }
-    
+
     public function index()
     {
         $data['siswa'] = $this->Siswa_model->getsiswa();
         $data['joinsiswa'] = $this->Siswa_model->JoinSiswaKelas();
-        
-        $this->load->view('layout-user/header');
-        $this->load->view('home/home',$data);
-        $this->load->view('layout-user/footer');
-        
-        
 
+        $this->load->view('layout-user/header');
+        $this->load->view('home/home', $data);
+        $this->load->view('layout-user/footer');
+        // var_dump($data['joinsiswa']);
+        // var_dump($this->db->last_query($data['joinsiswa']));
+        // die;
     }
 }
-?>
