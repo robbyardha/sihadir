@@ -75,7 +75,8 @@
                                                             <?= $s['nama_kelas'] ?>
                                                         <?php endif ?>
                                                     </td>
-                                                    <td><span class="badge badge-light-success"><?= $s['status_id'] ?></span>
+                                                    <td><span class="badge badge-light-success"><?= $s['keterangan'] ?></span>
+                                                    <span class="badge badge-light"><?= $s['time'] ?></span>
                                                         <div class="overlay-edit">
                                                             <a href="#" class="btn btn-icon btn-success"><i class="feather icon-check-circle"></i></a>
                                                             <a href="#" class="btn btn-icon btn-danger"><i class="feather icon-trash-2"></i></a>
@@ -86,7 +87,8 @@
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <th>No</th>
+                                            <th>No</th>
+                                                <th>NIPD</th>
                                                 <th>Nama</th>
                                                 <th>Kelas</th>
                                                 <th>Action</th>
@@ -108,29 +110,39 @@
                                     <table id="ipa2" class="table nowrap">
                                         <thead>
                                             <tr>
-                                                <th>No</th>
+                                            <th>No</th>
+                                                <th>NIPD</th>
                                                 <th>Nama</th>
                                                 <th>Kelas</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <?php
+                                        //  var_dump($joinsiswaA1); die;
+                                          ?>
+                                        <?php foreach ($joinsiswaA1 as $a) : ?>
                                             <tr>
-                                                <td>1</td>
+                                                <td><?= $no++ ?></td>
+                                                <td><div class="d-inline-block align-middle">
+                                                            <div class="d-inline-block">
+                                                                <?= $a['nis']; ?>
+                                                            </div>
+                                                        </div></td>
                                                 <td>
                                                     <div class="d-inline-block align-middle">
                                                         <img src="assets/images/user/avatar-1.jpg" alt="user image" class="img-radius align-top m-r-15" style="width:40px;">
                                                         <div class="d-inline-block">
-                                                            <h6 class="m-b-0">Tes</h6>
+                                                            <h6 class="m-b-0"><?= $a['nama']?></h6>
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td>XII IPA 2</td>
+                                                <td><?= $a['nama_kelas']?></td>
                                                 <td>
-                                                    <span class="badge badge-light-danger">Belum Hadir</span>
+                                                    <span class="badge badge-light-danger"><?= $a['keterangan']?></span>
                                                     <div class="overlay-edit">
-                                                        <button type="button" class="btn btn-icon btn-success"><i class="feather icon-check-circle"></i></button>
-                                                        <button type="button" class="btn btn-icon btn-danger"><i class="feather icon-trash-2"></i></button>
+                                                    <a href="#" class="btn btn-icon btn-success"><i class="feather icon-check-circle"></i></a>
+                                                    <a href="#" class="btn btn-icon btn-danger"><i class="feather icon-trash-2"></i></a>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -149,7 +161,7 @@
                             </div>
                         </div>
                     </div>
-
+                                <?php endforeach?>
                     <!-- Tab 3 -->
                     <div class="tab-pane fade show active" id="user3" role="tabpanel" aria-labelledby="user3-tab">
                         <div class="card user-profile-list">

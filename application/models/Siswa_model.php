@@ -16,12 +16,24 @@ class Siswa_model extends CI_Model
         }
     }
 
-    public function JoinSiswaKelas()
+    public function JoinSiswaKelas($nis = null)
     {
         $this->db->select('*');
         $this->db->from('siswa');
         $this->db->join('kelas', 'kelas.id = siswa.kelas_id', 'LEFT');
         $this->db->join('status', 'status.id = siswa.status_id', 'LEFT');
+        $query= $this->db->get();
+        return $query->result_array();
+        
+
+    }
+    public function JoinSiswaKelasA1($nis= 1)
+    {
+        $this->db->select('*');
+        $this->db->from('siswa');
+        $this->db->join('kelas', 'kelas.id = siswa.kelas_id', );
+        $this->db->join('status', 'status.id = siswa.status_id', 'LEFT');
+        $query= $this->db->where('kelas_id',$nis);
         $query= $this->db->get();
         return $query->result_array();
         
