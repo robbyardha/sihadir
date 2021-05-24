@@ -42,7 +42,7 @@
                 <li class="nav-item pcoded-hasmenu">
                     <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-clipboard"></i></span><span class="pcoded-mtext">Laporan</span></a>
                     <ul class="pcoded-submenu">
-                        <li><a href="<?= base_url('kehadiran') ?>">Laporan Kehadiran</a></li>
+                        <li><a href="<?= base_url('laporan') ?>">Laporan Kehadiran</a></li>
                         <li><a href="<?= base_url('kehadiran/perkelas') ?>">Laporan Per Kelas</a></li>
                     </ul>
                 </li>
