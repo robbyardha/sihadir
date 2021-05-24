@@ -29,9 +29,9 @@
                             <div class="card-body">
                                 <form method="POST" action="">
                                     <div class="form-group mb-3 mt-4">
-                                        <label class="floating-label" for="nama">Nama Acara</label>
-                                        <input type="text" class="form-control" id="nama" name="nama" placeholder="">
-                                        <small class="text-danger">Acara Tidak Valid</small>
+                                        <label class="floating-label" for="nama_acara">Nama Acara</label>
+                                        <input type="text" class="form-control" id="nama_acara" name="nama_acara" placeholder="">
+                                        <small class="text-danger"><?= form_error('nama_acara'); ?></small>
                                     </div>
                                     <div class="col-12 text-right">
                                         <button type="submit" class="btn btn-primary btn-sm btn-round has-ripple"><i class="feather icon-plus"></i> Add Event</button>

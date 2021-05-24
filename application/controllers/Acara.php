@@ -6,10 +6,12 @@ class Acara extends CI_Controller
     {
         parent::__construct();
         $this->load->library('form_validation');
+        $this->load->model('Acara_model');
     }
 
     public function index()
     {
+        $data['acara'] = $this->Acara_model->getAcara();
         $data['title'] = "SIHADIR - ADMIN";
         $this->load->view('layout-admin/header', $data);
         $this->load->view('layout-admin/navbar');
@@ -20,12 +22,27 @@ class Acara extends CI_Controller
 
     public function tambah()
     {
-        $data['title'] = "SIHADIR - ADMIN";
-        $this->load->view('layout-admin/header', $data);
-        $this->load->view('layout-admin/navbar');
-        $this->load->view('layout-admin/topbar');
-        $this->load->view('admin/acara/tambah');
-        $this->load->view('layout-admin/footer');
+        $this->form_validation->set_rules(
+            'nama_acara',
+            'Nama Acara',
+            'required',
+            [
+                'required' => "Nama Acara Harus diisi"
+            ]
+        );
+
+        if ($this->form_validation->run() == FALSE) {
+            $data['title'] = "SIHADIR - ADMIN";
+            $this->load->view('layout-admin/header', $data);
+            $this->load->view('layout-admin/navbar');
+            $this->load->view('layout-admin/topbar');
+            $this->load->view('admin/acara/tambah');
+            $this->load->view('layout-admin/footer');
+        } else {
+            // $this->session->set_flashdata('acara');
+            $this->Acara_model->tambah();
+            redirect('acara');
+        }
     }
 
     public function ubah()

@@ -44,14 +44,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Wisuda 2021</td>
-                                        <td>
-                                            <a href="#!" class="btn btn-info btn-sm">Edit</a>
-                                            <a href="#!" class="btn btn-danger btn-sm">Delete</a>
-                                        </td>
-                                    </tr>
+                                    <?php
+                                    $no = 1;
+                                    ?>
+                                    <?php foreach ($acara as $a) : ?>
+                                        <tr>
+                                            <td><?= $no++ ?></td>
+                                            <td><?= $a['nama_acara'] ?></td>
+                                            <td>
+                                                <a href="#!" class="btn btn-info btn-sm">Edit</a>
+                                                <a href="#!" class="btn btn-danger btn-sm">Delete</a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach ?>
                                 </tbody>
                             </table>
                         </div>
