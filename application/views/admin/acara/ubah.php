@@ -28,10 +28,11 @@
                         <div class="col-md-12">
                             <div class="card-body">
                                 <form method="POST" action="">
+                                    <input type="hidden" id="id" name="id" placeholder="" value="<?= $acara['id'] ?>">
                                     <div class="form-group mb-3 mt-4">
-                                        <label class="floating-label" for="nama">Nama Acara</label>
-                                        <input type="text" class="form-control" id="nama" name="nama" placeholder="" value="">
-                                        <small class="text-danger">Acara Tidak Valid</small>
+                                        <label class="floating-label" for="nama_acara">Nama Acara</label>
+                                        <input type="text" class="form-control" id="nama_acara" name="nama_acara" placeholder="" value="<?= $acara['nama_acara'] ?>">
+                                        <?= form_error('<small class="text-danger">', 'Acara Tidak Valid', '</small>') ?>
                                     </div>
                                     <div class="col-12 text-right">
                                         <button type="submit" class="btn btn-primary btn-sm btn-round has-ripple"><i class="feather icon-edit"></i> Change Event</button>

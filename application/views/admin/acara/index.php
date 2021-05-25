@@ -14,6 +14,7 @@
                             <li class="breadcrumb-item"><a href="#!">Acara</a></li>
                         </ul>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -21,11 +22,25 @@
         <!-- [ Main Content ] start -->
         <div class="row">
             <!-- subscribe start -->
+
             <div class="col-md-12">
+                <?php
+                // var_dump($this->session->flashdata('acara'));
+                // die;
+                ?>
+                <?php if ($this->session->flashdata('acara')) : ?>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>Data <strong>Acara </strong>Berhasil <?= $this->session->flashdata('acara') ?>
+                    </div>
+                <?php endif ?>
                 <div class="card">
+
                     <div class="card-header">
                         <h5>Acara</h5>
                     </div>
+
                     <div class="card-body">
                         <div class="row align-items-center m-l-0">
                             <div class="col-sm-6">
@@ -52,10 +67,12 @@
                                             <td><?= $no++ ?></td>
                                             <td><?= $a['nama_acara'] ?></td>
                                             <td>
-                                                <a href="#!" class="btn btn-info btn-sm">Edit</a>
-                                                <a href="#!" class="btn btn-danger btn-sm">Delete</a>
+                                                <a href="<?= base_url('acara/ubah/') ?><?= $a['id'] ?>" class="btn btn-info btn-sm">Edit</a>
+                                                <a href="<?= base_url('acara/hapus/') ?><?= $a['id'] ?>" id="delete" class="btn btn-danger btn-sm remove">Delete</a>
                                             </td>
+
                                         </tr>
+
                                     <?php endforeach ?>
                                 </tbody>
                             </table>
