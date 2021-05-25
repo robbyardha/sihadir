@@ -123,7 +123,7 @@
 <script src="<?= base_url('assets/') ?>js/plugins/bootstrap.min.js"></script>
 <script src="<?= base_url('assets/') ?>js/ripple.js"></script>
 <script src="<?= base_url('assets/') ?>js/pcoded.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- Apex Chart -->
 <script src="<?= base_url('assets/') ?>js/plugins/apexcharts.min.js"></script>
 <!-- custom-chart js -->
@@ -182,6 +182,8 @@
         $('#tables-dtb').DataTable();
     });
 </script>
+
+
 </body>
 
 </html>
