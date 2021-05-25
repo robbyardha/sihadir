@@ -102,15 +102,15 @@
 
 
 
-                    <!-- Tab 2 -->
-                    <div class="tab-pane fade show active" id="user2" role="tabpanel" aria-labelledby="user2-tab">
+                    <!-- Tab 1 -->
+                    <div class="tab-pane fade show active" id="user1" role="tabpanel" aria-labelledby="user1-tab">
                         <div class="card user-profile-list">
                             <div class="card-body">
                                 <div class="dt-responsive table-responsive">
-                                    <table id="ipa2" class="table nowrap">
+                                    <table id="ipa1" class="table nowrap">
                                         <thead>
                                             <tr>
-                                            <th>No</th>
+                                                <th>No</th>
                                                 <th>NIPD</th>
                                                 <th>Nama</th>
                                                 <th>Kelas</th>
@@ -140,6 +140,7 @@
                                                 <td><?= $a['nama_kelas']?></td>
                                                 <td>
                                                     <span class="badge badge-light-danger"><?= $a['keterangan']?></span>
+                                                    <span class="badge badge-light"><?= $a['time']?></span>
                                                     <div class="overlay-edit">
                                                     <a href="#" class="btn btn-icon btn-success"><i class="feather icon-check-circle"></i></a>
                                                     <a href="#" class="btn btn-icon btn-danger"><i class="feather icon-trash-2"></i></a>
@@ -151,6 +152,7 @@
                                         <tfoot>
                                             <tr>
                                                 <th>No</th>
+                                                <th>NIPD</th>
                                                 <th>Nama</th>
                                                 <th>Kelas</th>
                                                 <th>Action</th>
@@ -162,6 +164,61 @@
                         </div>
                     </div>
                                 <?php endforeach?>
+                    <!-- Tab 2 -->
+                    <div class="tab-pane fade show active" id="user2" role="tabpanel" aria-labelledby="user2-tab">
+                        <div class="card user-profile-list">
+                            <div class="card-body">
+                                <div class="dt-responsive table-responsive">
+                                    <table id="ipa2" class="table nowrap">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>NIPD</th>
+                                                <th>Nama</th>
+                                                <th>Kelas</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php foreach ($joinsiswaA2 as $a2) : ?>
+                                            <tr>
+                                                <td><?= $no++?></td>
+                                                <td><?= $a2['nis'];?></td>
+                                                <td>
+                                                    <div class="d-inline-block align-middle">
+                                                        <img src="assets/images/user/avatar-1.jpg" alt="user image" class="img-radius align-top m-r-15" style="width:40px;">
+                                                        <div class="d-inline-block">
+                                                            <h6 class="m-b-0"><?= $a2['nama'];?></h6>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td><?= $a2['nama_kelas'];?></td>
+                                                <td>
+                                                    <span class="badge badge-light-danger"><?= $a2['keterangan'];?></span>
+                                                    <span class="badge badge-light"><?= $a2['time'];?></span>
+                                                    <div class="overlay-edit">
+                                                        <button type="button" class="btn btn-icon btn-success"><i class="feather icon-check-circle"></i></button>
+                                                        <button type="button" class="btn btn-icon btn-danger"><i class="feather icon-trash-2"></i></button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <?php endforeach?>
+
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>NIPD</th>
+                                                <th>Nama</th>
+                                                <th>Kelas</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- Tab 3 -->
                     <div class="tab-pane fade show active" id="user3" role="tabpanel" aria-labelledby="user3-tab">
                         <div class="card user-profile-list">
@@ -171,36 +228,42 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
+                                                <th>NIPD</th>
                                                 <th>Nama</th>
                                                 <th>Kelas</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <?php foreach ($joinsiswaA3 as $a3) : ?>
                                             <tr>
-                                                <td>1</td>
+                                                <td><?= $no++?></td>
+                                                <td><?= $a3['nis'];?></td>
                                                 <td>
                                                     <div class="d-inline-block align-middle">
                                                         <img src="assets/images/user/avatar-1.jpg" alt="user image" class="img-radius align-top m-r-15" style="width:40px;">
                                                         <div class="d-inline-block">
-                                                            <h6 class="m-b-0">Tasasasases</h6>
+                                                            <h6 class="m-b-0"><?= $a3['nama'];?></h6>
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td>XII IPA 3</td>
+                                                <td><?= $a3['nama_kelas'];?></td>
                                                 <td>
-                                                    <span class="badge badge-light-danger">Belum Hadir</span>
+                                                    <span class="badge badge-light-danger"><?= $a3['keterangan'];?></span>
+                                                    <span class="badge badge-light"><?= $a3['time'];?></span>
                                                     <div class="overlay-edit">
                                                         <button type="button" class="btn btn-icon btn-success"><i class="feather icon-check-circle"></i></button>
                                                         <button type="button" class="btn btn-icon btn-danger"><i class="feather icon-trash-2"></i></button>
                                                     </div>
                                                 </td>
                                             </tr>
+                                            <?php endforeach?>
 
                                         </tbody>
                                         <tfoot>
                                             <tr>
                                                 <th>No</th>
+                                                <th>NIPD</th>
                                                 <th>Nama</th>
                                                 <th>Kelas</th>
                                                 <th>Action</th>
@@ -211,7 +274,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- Tab 4 -->
                     <div class="tab-pane fade show active" id="user4" role="tabpanel" aria-labelledby="user4-tab">
                         <div class="card user-profile-list">
@@ -221,36 +283,42 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
+                                                <th>NIPD</th>
                                                 <th>Nama</th>
                                                 <th>Kelas</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <?php foreach ($joinsiswaA4 as $a4) : ?>
                                             <tr>
-                                                <td>1</td>
+                                                <td><?= $no++?></td>
+                                                <td><?= $a4['nis'];?></td>
                                                 <td>
                                                     <div class="d-inline-block align-middle">
                                                         <img src="assets/images/user/avatar-1.jpg" alt="user image" class="img-radius align-top m-r-15" style="width:40px;">
                                                         <div class="d-inline-block">
-                                                            <h6 class="m-b-0">asdasdasd</h6>
+                                                            <h6 class="m-b-0"><?= $a4['nama'];?></h6>
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td>XII IPA 4</td>
+                                                <td><?= $a4['nama_kelas'];?></td>
                                                 <td>
-                                                    <span class="badge badge-light-danger">Belum Hadir</span>
+                                                    <span class="badge badge-light-danger"><?= $a4['keterangan'];?></span>
+                                                    <span class="badge badge-light"><?= $a4['time'];?></span>
                                                     <div class="overlay-edit">
                                                         <button type="button" class="btn btn-icon btn-success"><i class="feather icon-check-circle"></i></button>
                                                         <button type="button" class="btn btn-icon btn-danger"><i class="feather icon-trash-2"></i></button>
                                                     </div>
                                                 </td>
                                             </tr>
+                                            <?php endforeach?>
 
                                         </tbody>
                                         <tfoot>
                                             <tr>
                                                 <th>No</th>
+                                                <th>NIPD</th>
                                                 <th>Nama</th>
                                                 <th>Kelas</th>
                                                 <th>Action</th>
@@ -261,8 +329,7 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- tab 5 -->
+                    <!-- Tab 5 -->
                     <div class="tab-pane fade show active" id="user5" role="tabpanel" aria-labelledby="user5-tab">
                         <div class="card user-profile-list">
                             <div class="card-body">
@@ -271,36 +338,42 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
+                                                <th>NIPD</th>
                                                 <th>Nama</th>
                                                 <th>Kelas</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <?php foreach ($joinsiswaA5 as $a5) : ?>
                                             <tr>
-                                                <td>1</td>
+                                                <td><?= $no++?></td>
+                                                <td><?= $a5['nis'];?></td>
                                                 <td>
                                                     <div class="d-inline-block align-middle">
                                                         <img src="assets/images/user/avatar-1.jpg" alt="user image" class="img-radius align-top m-r-15" style="width:40px;">
                                                         <div class="d-inline-block">
-                                                            <h6 class="m-b-0">dsgdvsdewr4634</h6>
+                                                            <h6 class="m-b-0"><?= $a5['nama'];?></h6>
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td>XII IPA 5</td>
+                                                <td><?= $a5['nama_kelas'];?></td>
                                                 <td>
-                                                    <span class="badge badge-light-danger">Belum Hadir</span>
+                                                    <span class="badge badge-light-danger"><?= $a5['keterangan'];?></span>
+                                                    <span class="badge badge-light"><?= $a5['time'];?></span>
                                                     <div class="overlay-edit">
                                                         <button type="button" class="btn btn-icon btn-success"><i class="feather icon-check-circle"></i></button>
                                                         <button type="button" class="btn btn-icon btn-danger"><i class="feather icon-trash-2"></i></button>
                                                     </div>
                                                 </td>
                                             </tr>
+                                            <?php endforeach?>
 
                                         </tbody>
                                         <tfoot>
                                             <tr>
                                                 <th>No</th>
+                                                <th>NIPD</th>
                                                 <th>Nama</th>
                                                 <th>Kelas</th>
                                                 <th>Action</th>
@@ -311,8 +384,7 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- tab 6 -->
+                    <!-- Tab 6 -->
                     <div class="tab-pane fade show active" id="user6" role="tabpanel" aria-labelledby="user6-tab">
                         <div class="card user-profile-list">
                             <div class="card-body">
@@ -321,36 +393,42 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
+                                                <th>NIPD</th>
                                                 <th>Nama</th>
                                                 <th>Kelas</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <?php foreach ($joinsiswaS1 as $s1) : ?>
                                             <tr>
-                                                <td>1</td>
+                                                <td><?= $no++?></td>
+                                                <td><?= $s1['nis'];?></td>
                                                 <td>
                                                     <div class="d-inline-block align-middle">
                                                         <img src="assets/images/user/avatar-1.jpg" alt="user image" class="img-radius align-top m-r-15" style="width:40px;">
                                                         <div class="d-inline-block">
-                                                            <h6 class="m-b-0">d654561351</h6>
+                                                            <h6 class="m-b-0"><?= $s1['nama'];?></h6>
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td>XII IPS 1</td>
+                                                <td><?= $s1['nama_kelas'];?></td>
                                                 <td>
-                                                    <span class="badge badge-light-danger">Belum Hadir</span>
+                                                    <span class="badge badge-light-danger"><?= $s1['keterangan'];?></span>
+                                                    <span class="badge badge-light"><?= $s1['time'];?></span>
                                                     <div class="overlay-edit">
                                                         <button type="button" class="btn btn-icon btn-success"><i class="feather icon-check-circle"></i></button>
                                                         <button type="button" class="btn btn-icon btn-danger"><i class="feather icon-trash-2"></i></button>
                                                     </div>
                                                 </td>
                                             </tr>
+                                            <?php endforeach?>
 
                                         </tbody>
                                         <tfoot>
                                             <tr>
                                                 <th>No</th>
+                                                <th>NIPD</th>
                                                 <th>Nama</th>
                                                 <th>Kelas</th>
                                                 <th>Action</th>
@@ -361,7 +439,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- Tab 7 -->
                     <div class="tab-pane fade show active" id="user7" role="tabpanel" aria-labelledby="user7-tab">
                         <div class="card user-profile-list">
@@ -371,36 +448,42 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
+                                                <th>NIPD</th>
                                                 <th>Nama</th>
                                                 <th>Kelas</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <?php foreach ($joinsiswaS2 as $s2) : ?>
                                             <tr>
-                                                <td>1</td>
+                                                <td><?= $no++?></td>
+                                                <td><?= $s2['nis'];?></td>
                                                 <td>
                                                     <div class="d-inline-block align-middle">
                                                         <img src="assets/images/user/avatar-1.jpg" alt="user image" class="img-radius align-top m-r-15" style="width:40px;">
                                                         <div class="d-inline-block">
-                                                            <h6 class="m-b-0">d654561sadasdasdqqqqq351</h6>
+                                                            <h6 class="m-b-0"><?= $s2['nama'];?></h6>
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td>XII IPS 2</td>
+                                                <td><?= $s2['nama_kelas'];?></td>
                                                 <td>
-                                                    <span class="badge badge-light-danger">Belum Hadir</span>
+                                                    <span class="badge badge-light-danger"><?= $s2['keterangan'];?></span>
+                                                    <span class="badge badge-light"><?= $s2['time'];?></span>
                                                     <div class="overlay-edit">
                                                         <button type="button" class="btn btn-icon btn-success"><i class="feather icon-check-circle"></i></button>
                                                         <button type="button" class="btn btn-icon btn-danger"><i class="feather icon-trash-2"></i></button>
                                                     </div>
                                                 </td>
                                             </tr>
+                                            <?php endforeach?>
 
                                         </tbody>
                                         <tfoot>
                                             <tr>
                                                 <th>No</th>
+                                                <th>NIPD</th>
                                                 <th>Nama</th>
                                                 <th>Kelas</th>
                                                 <th>Action</th>
@@ -411,8 +494,7 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- tab 8 -->
+                    <!-- Tab 8 -->
                     <div class="tab-pane fade show active" id="user8" role="tabpanel" aria-labelledby="user8-tab">
                         <div class="card user-profile-list">
                             <div class="card-body">
@@ -421,36 +503,42 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
+                                                <th>NIPD</th>
                                                 <th>Nama</th>
                                                 <th>Kelas</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <?php foreach ($joinsiswaS3 as $s3) : ?>
                                             <tr>
-                                                <td>1</td>
+                                                <td><?= $no++?></td>
+                                                <td><?= $s3['nis'];?></td>
                                                 <td>
                                                     <div class="d-inline-block align-middle">
                                                         <img src="assets/images/user/avatar-1.jpg" alt="user image" class="img-radius align-top m-r-15" style="width:40px;">
                                                         <div class="d-inline-block">
-                                                            <h6 class="m-b-0">sadasdwq3e12</h6>
+                                                            <h6 class="m-b-0"><?= $s3['nama'];?></h6>
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td>XII IPS 3</td>
+                                                <td><?= $s3['nama_kelas'];?></td>
                                                 <td>
-                                                    <span class="badge badge-light-danger">Belum Hadir</span>
+                                                    <span class="badge badge-light-danger"><?= $s3['keterangan'];?></span>
+                                                    <span class="badge badge-light"><?= $s3['time'];?></span>
                                                     <div class="overlay-edit">
                                                         <button type="button" class="btn btn-icon btn-success"><i class="feather icon-check-circle"></i></button>
                                                         <button type="button" class="btn btn-icon btn-danger"><i class="feather icon-trash-2"></i></button>
                                                     </div>
                                                 </td>
                                             </tr>
+                                            <?php endforeach?>
 
                                         </tbody>
                                         <tfoot>
                                             <tr>
                                                 <th>No</th>
+                                                <th>NIPD</th>
                                                 <th>Nama</th>
                                                 <th>Kelas</th>
                                                 <th>Action</th>
@@ -461,6 +549,8 @@
                             </div>
                         </div>
                     </div>
+
+                    
 
                 </div>
 
