@@ -27,4 +27,12 @@ class Home extends CI_Controller
         // var_dump($this->db->last_query($data['joinsiswaA1']));
         // die;
     }
+
+    public function present()
+    {
+    }
+
+    public function cancel()
+    {
+    }
 }
