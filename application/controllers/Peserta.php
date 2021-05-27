@@ -8,6 +8,7 @@ class Peserta extends CI_Controller
         $this->load->library('form_validation');
     }
 
+   
     public function index()
     {
         $data['title'] = "SIHADIR - ADMIN";
@@ -20,6 +21,27 @@ class Peserta extends CI_Controller
 
     public function tambah()
     {
+        $this->form_validation->set_rules(
+            'nis',
+            'NIS', 
+            'required|numeric',
+            [
+                'required' => 'Nis Harus diisi',
+                'numeric' => 'Harus berupa Angka'
+            ]
+            );
+        
+        $this->form_validation->set_rules(
+            'nama',
+            'Nama',
+            'required',
+            [
+                'required' => 'Nama harus diisi'
+            ]
+            );
+
+       
+        
         $data['title'] = "SIHADIR - ADMIN";
         $this->load->view('layout-admin/header', $data);
         $this->load->view('layout-admin/navbar');

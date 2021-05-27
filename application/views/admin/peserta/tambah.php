@@ -22,6 +22,11 @@
         <!-- [ Main Content ] start -->
         <div class="row">
             <!-- subscribe start -->
+            <?php
+            $kelas = $this->db->get('kelas');
+            return $kelas->result_array();
+            // vardump($kelas); die;
+            ?>
             <div class="col-md-12">
                 <div class="card">
                     <div class="row align-items-center text-center">
@@ -40,14 +45,15 @@
                                     </div>
                                     <div class="form-group mb-3 mt-4">
                                         <label class="floating-label" for="kelas">Kelas</label>
-                                        <input type="text" class="form-control" id="kelas" name="kelas" placeholder="">
-                                        <small class="text-danger">Kelas Tidak Valid</small>
+                                        <!--<input type="text" class="form-control" id="kelas" name="kelas" placeholder="">
+                                        <small class="text-danger">Kelas Tidak Valid</small>-->
+                                        
                                     </div>
-                                    <div class="form-group mb-3 mt-4">
+                                    <<!--<div class="form-group mb-3 mt-4">
                                         <label class="floating-label" for="status">Status</label>
                                         <input type="text" class="form-control" id="status" name="status" placeholder="">
                                         <small class="text-danger">Status Tidak Valid</small>
-                                    </div>
+                                    </div>-->
                                     <div class="col-12 text-right">
                                         <button type="submit" class="btn btn-primary btn-sm btn-round has-ripple"><i class="feather icon-plus"></i> Add Event</button>
                                     </div>
