@@ -10,6 +10,7 @@ class Home extends CI_Controller
     public function index()
     {
         $data['siswa'] = $this->Siswa_model->getsiswa();
+        $data['kelas'] = $this->Siswa_model->getKelas();
         $data['joinsiswa'] = $this->Siswa_model->JoinSiswaKelas();
         $data['joinsiswaA1'] = $this->Siswa_model->JoinSiswaKelasA1();
         $data['joinsiswaA2'] = $this->Siswa_model->JoinSiswaKelasA2();
@@ -23,7 +24,7 @@ class Home extends CI_Controller
         $this->load->view('layout-user/header');
         $this->load->view('home/home', $data);
         $this->load->view('layout-user/footer');
-        // var_dump($data['joinsiswaA3']);
+        // var_dump($data['kelas']);
         // var_dump($this->db->last_query($data['joinsiswaA1']));
         // die;
     }
