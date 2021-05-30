@@ -26,8 +26,8 @@
                 <div class="card">
                     <div class="row align-items-center text-center">
                         <div class="col-md-12">
-                                <!-- <?php foreach ($kelas AS $k) :?> -->
-                                <!-- <?= var_dump($kelas); die;?> -->
+                                
+                                
                             <div class="card-body">
                                 <form method="POST" action="">
                                     <div class="form-group mb-3 mt-4">
@@ -40,14 +40,16 @@
                                         <input type="text" class="form-control" id="nama_siswa" name="nama_siswa" placeholder="">
                                         <small class="text-danger">Nama Tidak Valid</small>
                                     </div>
-                                    <div class="form-group mb-3 mt-4">
+                                    <?php foreach ($kelas AS $k) :?>
+                                    <div class="form-group mb-3 mt-4 mx-auto">
                                         <label class="floating-label" for="kelas">Kelas</label>
                                         <!-- <input type="text" class="form-control" id="kelas" name="kelas" placeholder=""> -->
-                                        <select name="kelas" id="kelas">
-                                        <option><?= $k['nama_kelas']; ?></option>
+                                        <select class="form-group ml-2 mb-3 mt-4" name="kelas" id="kelas">
+                                        <option value=""><?= $k['nama_kelas']; ?></option>
                                         </select>
                                         <small class="text-danger">Kelas Tidak Valid</small>
                                     </div>
+                                    <?php endforeach ?>
                                     <div class="form-group mb-3 mt-4">
                                         <label class="floating-label" for="status">Status</label>
                                         <input type="text" class="form-control" id="status" name="status" placeholder="">
@@ -56,7 +58,6 @@
                                     <div class="col-12 text-right">
                                         <button type="submit" class="btn btn-primary btn-sm btn-round has-ripple"><i class="feather icon-plus"></i> Add Event</button>
                                     </div>
-                                    <?php endforeach ?>
                                 </form>
                             </div>
                         </div>

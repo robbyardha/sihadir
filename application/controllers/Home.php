@@ -10,7 +10,6 @@ class Home extends CI_Controller
     public function index()
     {
         $data['siswa'] = $this->Siswa_model->getsiswa();
-        $data['kelas'] = $this->Siswa_model->getKelas();
         $data['joinsiswa'] = $this->Siswa_model->JoinSiswaKelas();
         $data['joinsiswaA1'] = $this->Siswa_model->JoinSiswaKelasA1();
         $data['joinsiswaA2'] = $this->Siswa_model->JoinSiswaKelasA2();
