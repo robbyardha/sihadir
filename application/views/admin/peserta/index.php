@@ -34,10 +34,9 @@
                                 <a href="<?= base_url('peserta/tambah') ?>" class="btn btn-success btn-sm btn-round has-ripple"><i class="feather icon-plus"></i> Add Peserta</a>
                             </div>
                         </div>
-                        <?php foreach ($joinsiswa as $s) :?>
                         <?php $no=1;?>
                         <div class="table-responsive">
-                            <table id="tables-dtb" class="table table-bordered table-striped mb-0">
+                            <table id="tables-dtb" class="table table-bordered table-striped mb-3 mx-auto">
                                 <thead>
                                     <tr>
                                         <th>No</th>
@@ -49,6 +48,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                        <?php foreach ($joinsiswa as $s) :?>
                                     <tr>
                                         <td><?= $no++ ?></td>
                                         <td><?= $s['nis'];?></td>

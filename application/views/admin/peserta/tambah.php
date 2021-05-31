@@ -29,7 +29,7 @@
                                 
                                 
                             <div class="card-body">
-                                <form method="POST" action="">
+                                <form method="POST" action="<?= base_url('admin/peserta');?>">
                                     <div class="form-group mb-3 mt-4">
                                         <label class="floating-label" for="nis">NIS</label>
                                         <input type="text" class="form-control" id="nis" name="nis" placeholder="">
@@ -45,7 +45,7 @@
                                         <label class="floating-label" for="kelas">Kelas</label>
                                         <!-- <input type="text" class="form-control" id="kelas" name="kelas" placeholder=""> -->
                                         <select class="form-group ml-2 mb-3 mt-4" name="kelas" id="kelas">
-                                        <option value=""><?= $k['nama_kelas']; ?></option>
+                                        <option ><?= $k['nama_kelas']; ?></option>
                                         </select>
                                         <small class="text-danger">Kelas Tidak Valid</small>
                                     </div>

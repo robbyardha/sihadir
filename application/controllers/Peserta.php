@@ -42,6 +42,16 @@ class Peserta extends CI_Controller
             ]
             );
 
+        $this->form_validation->set_rules(
+            'kelas',
+            'Kelas',
+            'required',
+            [
+                'required' => 'Kelas Harus Diisi'
+            ]
+            );
+
+
        
         
         $data['title'] = "SIHADIR - ADMIN";
@@ -54,10 +64,11 @@ class Peserta extends CI_Controller
         // var_dump($data['kelas']);
         // die;
     }
-
+    
     public function ubah()
     {
         $data['title'] = "SIHADIR - ADMIN";
+        $data['kelas'] = $this->Siswa_model->getKelas();
         $this->load->view('layout-admin/header', $data);
         $this->load->view('layout-admin/navbar');
         $this->load->view('layout-admin/topbar');
