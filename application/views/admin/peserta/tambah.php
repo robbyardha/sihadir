@@ -40,8 +40,8 @@
                                         <input type="text" class="form-control" id="nama_siswa" name="nama_siswa" placeholder="">
                                         <small class="text-danger">Nama Tidak Valid</small>
                                     </div>
-                                    <div class="form-group mb-3 mt-4 mx-auto">
-                                        <!-- <label class="floating-label" for="kelas">Kelas</label> -->
+                                    <div class="form-group fill mb-3 mt-4 mx-auto">
+                                        <label class="floating-label" for="kelas">Kelas</label>
                                         <!-- <input type="text" class="form-control" id="kelas" name="kelas" placeholder=""> -->
                                         <select class="form-group form-control ml-2 mb-3 mt-4" name="kelas" id="kelas">
                                             <?php foreach ($kelas as $k) : ?>
