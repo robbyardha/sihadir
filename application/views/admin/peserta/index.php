@@ -34,8 +34,9 @@
                                 <a href="<?= base_url('peserta/tambah') ?>" class="btn btn-success btn-sm btn-round has-ripple"><i class="feather icon-plus"></i> Add Peserta</a>
                             </div>
                         </div>
+                        <?php $no=1;?>
                         <div class="table-responsive">
-                            <table id="tables-dtb" class="table table-bordered table-striped mb-0">
+                            <table id="tables-dtb" class="table table-bordered table-striped mb-3 mx-auto">
                                 <thead>
                                     <tr>
                                         <th>No</th>
@@ -47,17 +48,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                        <?php foreach ($joinsiswa as $s) :?>
                                     <tr>
-                                        <td>1</td>
-                                        <td>7888</td>
-                                        <td>sdsds</td>
-                                        <td>X IPA 1</td>
-                                        <td>Hadir | 09:23</td>
+                                        <td><?= $no++ ?></td>
+                                        <td><?= $s['nis'];?></td>
+                                        <td><?= $s['nama'];?></td>
+                                        <td><?= $s['nama_kelas'];?></td>
+                                        <td><?= $s['keterangan'];?></td>
                                         <td>
                                             <a href="#!" class="btn btn-info btn-sm">Edit</a>
                                             <a href="#!" class="btn btn-danger btn-sm">Delete</a>
                                         </td>
                                     </tr>
+                                <?php endforeach?>
                                 </tbody>
                             </table>
                         </div>

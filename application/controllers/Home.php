@@ -23,8 +23,16 @@ class Home extends CI_Controller
         $this->load->view('layout-user/header');
         $this->load->view('home/home', $data);
         $this->load->view('layout-user/footer');
-        // var_dump($data['joinsiswaA3']);
+        // var_dump($data['kelas']);
         // var_dump($this->db->last_query($data['joinsiswaA1']));
         // die;
+    }
+
+    public function present()
+    {
+    }
+
+    public function cancel()
+    {
     }
 }

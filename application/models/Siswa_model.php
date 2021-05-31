@@ -7,6 +7,11 @@ class Siswa_model extends CI_Model
         return $this->db->get('siswa')->result_array();
     }
 
+    public function getKelas()
+    {
+        return $this->db->get('kelas')->result_array();
+    }
+    
     public function getsiswabyid($nis = null)
     {
         if ($nis == null){
@@ -123,5 +128,18 @@ class Siswa_model extends CI_Model
         
 
     }
+
+    public function tambah()
+    {
+        $data = [
+            'nis' => htmlspecialchars($this->input->post('nis')),
+            'nama' => htmlspecialchars($this->input->post('nama')),
+            'kelas_id' => htmlspecialchars($this->input->post('kelas_id')),
+            'status_id' => null,
+            'time' => date('Y-m-d H:i:s')
+        ];
+    }
+
+    
     
 }

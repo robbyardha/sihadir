@@ -27,6 +27,8 @@
                     <div class="row align-items-center text-center">
                         <div class="col-md-12">
                             <div class="card-body">
+                            <?php foreach ($kelas AS $k)
+                            var_dump($kelas); die;?>
                                 <form method="POST" action="">
                                     <div class="form-group mb-3 mt-4">
                                         <label class="floating-label" for="nis">NIS</label>
@@ -40,7 +42,10 @@
                                     </div>
                                     <div class="form-group mb-3 mt-4">
                                         <label class="floating-label" for="kelas">Kelas</label>
-                                        <input type="text" class="form-control" id="kelas" name="kelas" placeholder="">
+                                        <!--<input type="text" class="form-control" id="kelas" name="kelas" placeholder="">-->
+                                        <select name="kelas" id="kelas">
+                                        <option><?= $k['nama_kelas'] ?></option>
+                                        </select>
                                         <small class="text-danger">Kelas Tidak Valid</small>
                                     </div>
                                     <div class="form-group mb-3 mt-4">
@@ -51,6 +56,7 @@
                                     <div class="col-12 text-right">
                                         <button type="submit" class="btn btn-primary btn-sm btn-round has-ripple"><i class="feather icon-plus"></i> Add Event</button>
                                     </div>
+                                    <?php endforeach ?>
                                 </form>
                             </div>
                         </div>
