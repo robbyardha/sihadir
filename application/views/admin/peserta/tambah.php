@@ -26,10 +26,10 @@
                 <div class="card">
                     <div class="row align-items-center text-center">
                         <div class="col-md-12">
-                                
-                                
+
+
                             <div class="card-body">
-                                <form method="POST" action="<?= base_url('admin/peserta');?>">
+                                <form method="POST" action="<?= base_url('admin/peserta'); ?>">
                                     <div class="form-group mb-3 mt-4">
                                         <label class="floating-label" for="nis">NIS</label>
                                         <input type="text" class="form-control" id="nis" name="nis" placeholder="">
@@ -40,16 +40,16 @@
                                         <input type="text" class="form-control" id="nama_siswa" name="nama_siswa" placeholder="">
                                         <small class="text-danger">Nama Tidak Valid</small>
                                     </div>
-                                    <?php foreach ($kelas AS $k) :?>
                                     <div class="form-group mb-3 mt-4 mx-auto">
-                                        <label class="floating-label" for="kelas">Kelas</label>
+                                        <!-- <label class="floating-label" for="kelas">Kelas</label> -->
                                         <!-- <input type="text" class="form-control" id="kelas" name="kelas" placeholder=""> -->
-                                        <select class="form-group ml-2 mb-3 mt-4" name="kelas" id="kelas">
-                                        <option ><?= $k['nama_kelas']; ?></option>
+                                        <select class="form-group form-control ml-2 mb-3 mt-4" name="kelas" id="kelas">
+                                            <?php foreach ($kelas as $k) : ?>
+                                                <option><?= $k['nama_kelas']; ?></option>
+                                            <?php endforeach ?>
                                         </select>
                                         <small class="text-danger">Kelas Tidak Valid</small>
                                     </div>
-                                    <?php endforeach ?>
                                     <div class="form-group mb-3 mt-4">
                                         <label class="floating-label" for="status">Status</label>
                                         <input type="text" class="form-control" id="status" name="status" placeholder="">
